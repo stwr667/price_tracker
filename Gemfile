@@ -19,8 +19,8 @@ end
 
 group :development do
   gem 'annotate', '~> 2.4.1.beta'
-  #gem 'debugger'
-  gem 'ruby-debug-ide'
+  gem 'debugger'
+  #gem 'ruby-debug-ide'
 end
 
 # Gems used only for assets and not required
