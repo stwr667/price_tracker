@@ -4,6 +4,7 @@ namespace :db do
     make_users
     make_microposts
     make_relationships
+    make_products
   end
 end
 
@@ -39,5 +40,29 @@ def make_relationships
   followers      = users[3..40]
   followed_users.each { |followed| user.follow!(followed) }
   followers.each      { |follower| follower.follow!(user) }
+end
+
+
+def make_products
+  galaxy = Product.create!(name:     "Samsung Galaxy Nexus", model: "I9250",
+                           description: "Pure Google phone with Android 4.1",
+                           price: 350, delivery: 19.95, 
+                           url: "http://www.kogan.com/au/buy/samsung-galaxy-nexus/?gclid=CN-T46m0ubICFcUipQodoT8ApQ",
+                           deal_expiry: nil)
+  99.times do |n|
+    name  = Faker::Name.name
+    model = "model#{n+1}"
+    description = Faker::Company.catch_phrase
+    price = (n + 1) * 10
+    delivery = (n + 1) / 23
+    url = Faker::Internet.url
+    
+    Product.create!(name:     name,
+                    model:    model,
+                    description: description,
+                    price:    price,
+                    delivery: delivery,
+                    url:      url)
+  end
 end
 
