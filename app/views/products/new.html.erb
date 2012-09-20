@@ -1,0 +1,12 @@
+<% provide(:title, 'Create new product') %>
+<h1>Create new product</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@product) do |f| %>
+      <%= render 'fields', f: f %>
+      <%= f.submit "Add this product", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+

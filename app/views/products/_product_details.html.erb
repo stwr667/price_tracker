@@ -1,0 +1,36 @@
+<table class="product_details">
+  <tr>
+    <td>Model:</td>
+    <td><%= @product.model %></td>
+  </tr>
+  <tr>
+    <td>Description:</td>
+    <td><%= @product.description %></td>
+  </tr>
+  <tr>
+    <td>Price:</td>
+    <td><%= @product.price %></td>
+    </tr>
+  <tr>
+    <td>Delivery:</td>
+    <td><% if @product.delivery > 0 %><%= @product.delivery %><% end %></td>
+  </tr>
+  <tr>
+    <td>Url:</td>
+    <td><%= link_to @product.url, @product.url %></td>
+  </tr>
+  <% if @product.deal_expiry %>
+    <tr>
+      <td>Deal Expires:</td>
+      <td><%=@product.deal_expiry%></td>
+    </tr>
+  <% end %>
+  <tr><td class="timestamp" colspan="2">
+    Created <%= time_ago_in_words(@product.created_at) %> ago.
+  </td></tr>
+  <tr><td>
+  <% if current_user.present? && current_user.admin? %>
+    <%= link_to "delete", @product, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+  </td></tr>
+</table>

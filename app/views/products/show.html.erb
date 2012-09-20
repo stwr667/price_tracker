@@ -1,0 +1,19 @@
+<% provide(:title, @product.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @product.name %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3>Details</h3><br/>
+    <%= render 'product_details' %>
+  </div>
+</div>
+
+
