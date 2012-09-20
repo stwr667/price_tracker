@@ -42,7 +42,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    debugger
     user_to_destroy = User.find(params[:id])
     if current_user?(user_to_destroy)
       redirect_to root_url

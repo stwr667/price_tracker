@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120912125347) do
     t.decimal  "price"
     t.decimal  "delivery"
     t.string   "url"
-    t.datetime "deal_expiry", :null => true, :default => nil
+    t.datetime "deal_expiry"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

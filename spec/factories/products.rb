@@ -4,7 +4,8 @@ FactoryGirl.define do
     sequence(:name) { |n| "Product #{n}" }
     sequence(:model) { |n| "Model #{n}" }
     sequence(:description) { |n| "Description #{n}" }
-    price "9.99"
+    price "99.99"
+    delivery 19.95
     url "http://www.ozbargain.com.au"
     
     factory :product_offer do

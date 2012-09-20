@@ -43,3 +43,12 @@ RSpec::Matchers.define :have_success_message do |message|
   end
 end
 
+def fill_in_valid_product()
+  fill_in "Name",         with: "Samsung Galaxy Nexus"
+  fill_in "Model",        with: "I9250"
+  fill_in "Description",  with: "Android 4.1 Smartphone, pure google"
+  fill_in "Price",        with: "359"
+  fill_in "Delivery",     with: "19.95"
+  fill_in "Url",          with: "http://www.kogan.com/au/buy/samsung-galaxy-nexus"
+  fill_in "Deal Expiry",  with: ""
+end

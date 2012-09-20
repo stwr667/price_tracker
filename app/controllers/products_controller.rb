@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
   end
   
   def edit
+    @product = Product.find(params[:id])
   end
 
   def update
@@ -36,10 +37,9 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    debugger
     product_to_destroy = Product.find(params[:id])
     product_to_destroy.destroy
-    flash[:success] = "Product destroyed."
+    flash[:success] = "Product deleted."
     redirect_to products_url
   end
 
